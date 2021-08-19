@@ -329,13 +329,15 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{An event not occurring: reprised}
+		\frametitle{Question}
 		
-		Since 
+		\Large Can anyone think of an alternative way of determining the probability that $A$ does not occur?
 		
+		\begin{equation}
+			\mathbb{P}(\text{not } A) = \mathbb{P}(S) - \mathbb{P}(A) = 1 - \mathbb{P}(A) = 1 - \frac{5}{9}
+		\end{equation}
 		
 	\end{frame}
-	
 
 	\begin{frame}
 		\frametitle{Combinations of events: intersection}
@@ -366,6 +368,27 @@
 	\end{figure}
 		
 	\end{frame}
+
+	\begin{frame}
+		\frametitle{Question}
+		
+		\Large Can anyone think of an alternative way of determining the probability of the union of $A$ and $B$?
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Question}
+		
+		\Large Can anyone think of an alternative way of determining the probability of the union of $A$ and $B$?
+		
+		\begin{align}
+			\mathbb{P}(A \cup B) &= \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cap B)\\
+			&= \frac{5}{9} + \frac{2}{9} - \frac{1}{9} = \frac{6}{9}
+		\end{align}
+		
+		
+	\end{frame}
+	
 	
 	\begin{frame}
 		\frametitle{}
@@ -376,7 +399,17 @@
 	\begin{frame}
 		\frametitle{Problems}
 		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.3\textwidth]{./figures/dice.png}}
+		\end{figure}
+	
+	Consider a six-sided die with numbers 1-6 on each face that is thrown once.
 		
+		\begin{enumerate}
+			\item What's the probability that a six is thrown?
+			\item What's the probability that an even number is thrown?
+			\item What's the probability that either an even number or one is thrown?
+		\end{enumerate}
 		
 	\end{frame}
 
@@ -387,7 +420,7 @@
 	\section{Joint distributions}
 	\frame{\tableofcontents[currentsection]}
 
-	\section{Conditional probability}
+	\section{Marginal and conditional probability}
 	\frame{\tableofcontents[currentsection]}
 	
 	\section{Bayes' rule}
