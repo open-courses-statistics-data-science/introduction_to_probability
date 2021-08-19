@@ -102,9 +102,16 @@
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Introductions}
+		\frametitle{Who am I?}
 		
-		Who am I?
+		\begin{itemize}
+			\item Statistician working mainly in epidemiology.
+			\item Claim to probability fame: born in the same town where Thomas Bayes lived (Tunbridge Wells, UK).
+		\end{itemize}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.6\textwidth]{./figures/tunbridgeWells.jpg}}
+		\end{figure}
 		
 	\end{frame}
 
@@ -124,7 +131,7 @@
 		
 		\begin{itemize}
 			\item Introduction to probability, Blitzstein and Hwang. Open source book available here: \url{https://projects.iq.harvard.edu/stat110/home}
-			\item Seeing theory. A beautiful online resource that has lots of creative ways to think about probability. \url{https://seeing-theory.brown.edu/}
+			\item Seeing theory, Kunin et al. A beautiful online resource that has lots of creative ways to think about probability. \url{https://seeing-theory.brown.edu/}
 		\end{itemize}
 		
 	\end{frame}
@@ -135,6 +142,7 @@
 	\end{frame}
 
 	\section{What is probability and why do we need it?}
+	\frame{\tableofcontents[currentsection]}
 	
 	\begin{frame}
 		\frametitle{What is probability?}
@@ -145,27 +153,94 @@
 	
 	\begin{frame}
 		\frametitle{Why study probability?}
+		It is used in:
 		
+		\begin{itemize}
+			\item Statistics: probability is the foundational language of it
+			\item Biology: e.g. inheritance of genes
+			\item Meteorology: e.g. weather forecasts are generated using probabilities
+			\item Epidemiology: e.g. analysing randomised clinical trials and fitting models to epidemiological data
+			\item Physics: our current best explanation of the universe at small scales (quantum theory) is based on probability
+		\end{itemize}
 		
 		
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Blitzstein and Hwang's Pebble World}
+		\frametitle{The difficulties of probability}
+		
+		If we rely on our intuitions, it is easy to go awry with probability.
+		
+		\vspace{0.5cm}
+		
+		$\implies$ need careful mathematical analysis.
+		
+		\vspace{0.5cm}
+		
+		Fortunately, \textit{simulation} using R can really help to understand.
+		
 	\end{frame}
 
 	\section{Probability and counting}
+	\frame{\tableofcontents[currentsection]}
 	
 	\begin{frame}
-		\frametitle{test}
+		\frametitle{Blitzstein and Hwang's Pebble World}
+		
+		As an example, consider reaching into a bag to pull out one of nine pebbles: we call this \textit{pebble world}.
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.6\textwidth]{./figures/pebble_world_base.png}}
+		\end{figure}
+		
+	\end{frame}
+
+
+	\begin{frame}
+		\frametitle{Outcomes}
+		
+		An \textit{outcome} is a possible result of some activity. Here pulling one particular pebble out of the bag would be an outcome.
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.6\textwidth]{./figures/pebble_world_single.png}}
+		\end{figure}
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Sample spaces}
+		
+		The \textit{sample space} is the \textit{set} of all possible outcomes of an experiment. Here, it is the set of all pebbles.
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.6\textwidth]{./figures/pebble_world_base.png}}
+		\end{figure}
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Events}
+		
+		An \textit{event} is a \textit{set} of possible outcomes. For example, below event $A$ corresponds to selecting one of five pebbles; event $B$ to selecting one of two.
+		
+		As we can see, two or more events can happen at once.
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.6\textwidth]{./figures/pebble_world.png}}
+		\end{figure}
+		
 	\end{frame}
 
 	\section{Joint distributions}
+	\frame{\tableofcontents[currentsection]}
 
 	\section{Conditional probability}
+	\frame{\tableofcontents[currentsection]}
 	
 	\section{Bayes' rule}
+	\frame{\tableofcontents[currentsection]}
 	
 	\section{Continuous probability distributions}
+	\frame{\tableofcontents[currentsection]}
 	
 \end{document} 
