@@ -8,8 +8,8 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
-   sodipodi:docname="pebble_world.svg"
-   inkscape:export-filename="/Users/benlambert/Documents/Github/introduction_to_probability/lectures/figures/pebble_world.png"
+   sodipodi:docname="pebble_world_sample_space.svg"
+   inkscape:export-filename="/Users/benlambert/Documents/Github/introduction_to_probability/lectures/figures/pebble_world_sample_space.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -27,7 +27,7 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.67081229"
-     inkscape:cx="397.27954"
+     inkscape:cx="120.00376"
      inkscape:cy="597.03736"
      inkscape:window-width="1312"
      inkscape:window-height="1003"
@@ -123,59 +123,16 @@
          rx="17.35458"
          ry="14.396414" />
     </g>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:7.59,7.59;stroke-dashoffset:0"
-       d="M 34.314741,85.589641 H 181.82868 l 0.39443,34.709159 v 0 l -48.11952,0.39443 v 35.89243 H 33.920319 Z"
-       id="path1760" />
-    <g
-       id="g2027"
-       style="stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       transform="translate(3.6666667e-8,1.5875)">
-      <path
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 83.617529,118.72111 V 190.9004 H 136.47012"
-         id="path1932" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 136.47012,190.9004 V 120.69323"
-         id="path1940" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 83.617529,118.72111 H 136.0757"
-         id="path1942" />
-    </g>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:16.9333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="74.545815"
-       y="102.5498"
-       id="text2832"><tspan
+       x="22.9818"
+       y="193.17143"
+       id="text7724"><tspan
          sodipodi:role="line"
-         id="tspan2830"
+         id="tspan7722"
          style="font-size:16.9333px;stroke-width:0.264583"
-         x="74.545815"
-         y="102.5498">A</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:16.9333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="21.677256"
-       y="191.13974"
-       id="text2832-40"><tspan
-         sodipodi:role="line"
-         id="tspan2830-8"
-         style="font-size:16.9333px;stroke-width:0.264583"
-         x="21.677256"
-         y="191.13974">S</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:16.9333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="122.52441"
-       y="170.49504"
-       id="text2832-4"><tspan
-         sodipodi:role="line"
-         id="tspan2830-9"
-         style="font-size:16.9333px;stroke-width:0.264583"
-         x="122.52441"
-         y="170.49504">B</tspan></text>
+         x="22.9818"
+         y="193.17143">S</tspan></text>
   </g>
 </svg>

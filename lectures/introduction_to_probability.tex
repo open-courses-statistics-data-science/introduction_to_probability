@@ -146,13 +146,23 @@
 	
 	\begin{frame}
 		\frametitle{What is probability?}
-		\epigraph{Mathematics is the logic of certainty; probability is the logic of uncertainty}{Bitzstein and Hwang, 2019}
+		\epigraph{Mathematics is the logic of certainty; probability [theory] is the [mathematical] logic of uncertainty}{Bitzstein and Hwang, 2019}
 		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Why do we need probability theory?}
+		
+		Life and science are full of unknown things. We say these things are \textit{uncertain}.
+		
+		Faced with these, we can give up; \textit{Probability theory} gives us a way to make assumptions about uncertain phenomena which allows us to make progress with understanding without having to know everything.
+		
+		\epigraph{There are known knowns. These are things we know that we know. There are known unknowns. That is to say, there are things that we know we don't know. But there are also unknown unknowns. There are things we don't know we don't know.}{Donald Rumsfeld, 2002}
 		
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Why study probability?}
+		\frametitle{Who uses probability?}
 		It is used in:
 		
 		\begin{itemize}
@@ -173,11 +183,11 @@
 		
 		\vspace{0.5cm}
 		
-		$\implies$ need careful mathematical analysis.
+		 So, we need careful mathematical analysis.
+		 
+		 \vspace{0.5cm}
 		
-		\vspace{0.5cm}
-		
-		Fortunately, \textit{simulation} using R can really help to understand.
+		Fortunately, \textit{simulation} using R / Python / etc. can also really help us to understand.
 		
 	\end{frame}
 
@@ -210,10 +220,10 @@
 	\begin{frame}
 		\frametitle{Sample spaces}
 		
-		The \textit{sample space} is the \textit{set} of all possible outcomes of an experiment. Here, it is the set of all pebbles.
+		The \textit{sample space}, $S$, is the \textit{set} of all possible outcomes of an experiment. Here, it is the set of all pebbles.
 		
 		\begin{figure}[ht]
-			\centerline{\includegraphics[width=0.6\textwidth]{./figures/pebble_world_base.png}}
+			\centerline{\includegraphics[width=0.6\textwidth]{./figures/pebble_world_sample_space.png}}
 		\end{figure}
 		
 	\end{frame}
@@ -231,6 +241,149 @@
 		
 	\end{frame}
 
+
+	\begin{frame}
+		\frametitle{Probabilities of events}
+		
+		What do we mean by the probability of $A$ occurring? We write this as: $\mathbb{P}(A)$.
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.6\textwidth]{./figures/pebble_world_proba.png}}
+		\end{figure}
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Probabilities from counting}
+		
+		If all pebbles equally likely to be drawn:
+		
+		 \begin{equation}
+		 	\mathbb{P}(A) = \frac{\text{number of pebbles in } A}{\text{number of pebbles in } S} = \frac{5}{9}
+		 \end{equation}
+	 
+	 \begin{figure}[ht]
+	 	\centerline{\includegraphics[width=0.6\textwidth]{./figures/pebble_world_proba.png}}
+	 \end{figure}
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Probability of an event in $S$}
+		
+		Consider the probability that some event in $S$ occurs:
+		
+		\begin{equation}
+			\mathbb{P}(S) = \frac{\text{number of pebbles in } S}{\text{number of pebbles in } S} = \frac{9}{9} = 1
+		\end{equation}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.6\textwidth]{./figures/pebble_world_probs.png}}
+		\end{figure}
+		
+	\end{frame}
+
+	\begin{frame}
+		What about the probability that no event in $S$ occurs?
+		
+		\begin{equation}
+			\mathbb{P}(\text{not }S) = \frac{0}{9} = 0
+		\end{equation}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.6\textwidth]{./figures/pebble_world_probnots.png}}
+		\end{figure}
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Defining a probability}
+		
+		A probability of an event must be bounded between 0 and 1\footnote{Note: ``impossible'' isn't 100\% accurate here but you can start out by thinking of probabilities this way.}.
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.8\textwidth]{./figures/probability.png}}
+		\end{figure}
+		
+	\end{frame}
+
+		\begin{frame}
+		\frametitle{An event not occurring}
+		We can also determine the probability that $A$ does not occur:
+		
+		\begin{equation}
+			\mathbb{P}(\text{not } A) = \frac{\text{number of pebbles not in } A}{\text{number of pebbles in } S} = \frac{4}{9}
+		\end{equation}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.6\textwidth]{./figures/pebble_world_probnota.png}}
+		\end{figure}
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Question}
+		
+		\Large Can anyone think of an alternative way of determining the probability that $A$ does not occur?
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{An event not occurring: reprised}
+		
+		Since 
+		
+		
+	\end{frame}
+	
+
+	\begin{frame}
+		\frametitle{Combinations of events: intersection}
+		
+		We can determine the probability of $A$ \textit{and} $B$ occurring by determining the overlap between these two events:
+		
+		\begin{equation}
+			\mathbb{P}(A \cap  B) = \mathbb{P}(A, B) = \frac{\text{number of pebbles in both } A \text{ and } B}{\text{number of pebbles in } S} = \frac{1}{9}
+		\end{equation}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.6\textwidth]{./figures/pebble_world_and.png}}
+		\end{figure}
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Combinations of events: union}
+		
+		We can determine the probability of $A$ \textit{and/or} $B$ occurring by:
+		
+		\begin{equation}
+			\mathbb{P}(A \cup B) = \frac{\text{number of pebbles in either } A \text{ or } B \text{ or both}}{\text{number of pebbles in } S} = \frac{6}{9}
+		\end{equation}
+	
+	\begin{figure}[ht]
+		\centerline{\includegraphics[width=0.6\textwidth]{./figures/pebble_world_or.png}}
+	\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{}
+		\Large Questions?
+	\end{frame}
+	
+	
+	\begin{frame}
+		\frametitle{Problems}
+		
+		
+		
+	\end{frame}
+
+
+	\section{Probability distributions}
+
+
 	\section{Joint distributions}
 	\frame{\tableofcontents[currentsection]}
 
@@ -239,6 +392,8 @@
 	
 	\section{Bayes' rule}
 	\frame{\tableofcontents[currentsection]}
+	
+	Use breast cancer example.
 	
 	\section{Continuous probability distributions}
 	\frame{\tableofcontents[currentsection]}

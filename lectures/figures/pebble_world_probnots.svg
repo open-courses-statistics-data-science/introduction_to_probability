@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+   sodipodi:docname="pebble_world_probnots.svg"
+   inkscape:export-filename="/Users/benlambert/Documents/Github/introduction_to_probability/lectures/figures/pebble_world_probs.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.67081229"
+     inkscape:cx="-16.39803"
+     inkscape:cy="796.79518"
+     inkscape:window-width="1312"
+     inkscape:window-height="1003"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#b3b3b3;fill-rule:evenodd;stroke-width:0.264583"
+       id="rect31"
+       width="173.54582"
+       height="115.17131"
+       x="20.904383"
+       y="81.645416" />
+    <g
+       id="g1355"
+       transform="translate(4.7330723,-2.6458334)"
+       style="stroke:#000000;stroke-opacity:1">
+      <ellipse
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.765;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path171"
+         cx="50.486053"
+         cy="104.71912"
+         rx="17.35458"
+         ry="14.396414" />
+      <ellipse
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.765;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path171-0"
+         cx="102.94422"
+         cy="104.71912"
+         rx="17.35458"
+         ry="14.396414" />
+      <ellipse
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.765;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path171-0-7"
+         cx="155.40239"
+         cy="104.71912"
+         rx="17.35458"
+         ry="14.396414" />
+    </g>
+    <ellipse
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.765;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path171-9"
+       cx="55.219128"
+       cy="139.00262"
+       rx="17.35458"
+       ry="14.396414" />
+    <ellipse
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.765;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path171-0-3"
+       cx="107.67729"
+       cy="139.00262"
+       rx="17.35458"
+       ry="14.396414" />
+    <ellipse
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.765;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path171-0-7-5"
+       cx="160.13547"
+       cy="139.00262"
+       rx="17.35458"
+       ry="14.396414" />
+    <ellipse
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.765;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path171-9-9"
+       cx="55.219128"
+       cy="175.93198"
+       rx="17.35458"
+       ry="14.396414" />
+    <ellipse
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.765;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path171-0-3-3"
+       cx="107.67729"
+       cy="175.93198"
+       rx="17.35458"
+       ry="14.396414" />
+    <ellipse
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.765;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path171-0-7-5-1"
+       cx="160.13547"
+       cy="175.93198"
+       rx="17.35458"
+       ry="14.396414" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:16.9333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="22.409773"
+       y="190.74533"
+       id="text7724"><tspan
+         sodipodi:role="line"
+         id="tspan7722"
+         style="font-size:16.9333px;stroke-width:0.264583"
+         x="22.409773"
+         y="190.74533">S</tspan></text>
+  </g>
+</svg>
