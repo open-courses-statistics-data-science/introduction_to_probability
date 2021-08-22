@@ -130,7 +130,7 @@
 		
 		Levels: each problem set will have at least one \textit{advanced} question.
 		
-		Time: if you don't finish the questions in time, don't worry. There are answers to these here: 
+		Time: if you don't finish the questions in time, don't worry. There are answers to these here: \url{https://github.com/ben18785/introduction_to_probability}.
 		
 	\end{frame}
 
@@ -539,7 +539,17 @@
 	\begin{frame}
 		\frametitle{The problem with counting}
 		
+		Now different outcomes have different weights, so can't use counting. But tree still works.
 		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.4\textwidth]{./figures/tree-prob-choc-2.pdf}}
+		\end{figure}
+		
+		Sum up probabilities:
+		
+		\begin{equation}
+			\mathbb{P}(\text{chocolate}) = \frac{1}{2} \times \frac{1}{3} +  \frac{1}{2} \times \frac{1}{2} = \frac{5}{12}
+		\end{equation}
 		
 	\end{frame}
 
@@ -561,6 +571,121 @@
 		\textit{Conditioning} is how this is handled in statistics.
 		
 	\end{frame}
+
+
+	\begin{frame}
+		\frametitle{Back to pebble world}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.5\textwidth]{./figures/pebble_world_and.png}}
+		\end{figure}
+		
+		If we know that $A$ has occurred, what's the probability that $B$ has occurred? We write this \textit{conditional} probability as:
+		
+		\begin{equation}
+			\mathbb{P}(B|A)
+		\end{equation}
+	
+		which reads, ``The probability that $B$ occurs given that $A$ has.''
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Shrinking sample space}
+		
+		If we know $A$ has occurred, our sample space shrinks.
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.5\textwidth]{./figures/pebble_world_conditional.pdf}}
+		\end{figure}
+	
+		So now we can just count:
+		
+		\begin{equation}
+			\mathbb{P}(B|A) = \frac{1}{5}
+		\end{equation}
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Law of conditional probability}
+		
+		The below rule effectively renormalises the sample space to calculate updated probabilities:
+		
+		\begin{equation}
+			\mathbb{P}(B|A) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(A)}
+		\end{equation}
+	
+		In our example:
+		
+		\begin{equation}
+			\mathbb{P}(B|A) = \frac{1/9}{5/9} = \frac{1}{5}
+		\end{equation}
+		
+	\end{frame}
+
+
+	\begin{frame}
+		\frametitle{Question}
+		
+		Is $\mathbb{P}(A|B)$ equal to $\mathbb{P}(B|A)$?
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Inverse conditional}
+		
+		No due to different shrunk sample spaces.
+			
+		\begin{equation}
+			\mathbb{P}(A|B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)} = \frac{1/9}{2/9} = \frac{1}{2}
+		\end{equation}
+			
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.5\textwidth]{./figures/pebble_world_conditional1.pdf}}
+		\end{figure}
+			
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Trees and conditional probability: back to the shop}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.4\textwidth]{./figures/tree-prob-1.pdf}}
+		\end{figure}
+	
+	Question: What's the probability that we get given strawberry sauce given that we receive a cake?
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Shrunk sample space}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.4\textwidth]{./figures/tree-prob-1-shrunk.pdf}}
+		\end{figure}
+	
+	So, we simply read off $1/6$.
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Question}
+		
+		What's the probability that we received an ice-cream given that we got vanilla sauce?
+		
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Why is this not right?}
+
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.5\textwidth]{./figures/tree-prob-2.pdf}}
+		\end{figure}
+	
+	\end{frame}
+	
 
 	\begin{frame}
 		Independence
