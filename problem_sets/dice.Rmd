@@ -1,0 +1,81 @@
+---
+title: "Dice problems and answers"
+output: html_notebook
+---
+
+1. What's the probability that a six is thrown?
+
+There is only one way a six can occur. There are six possible outcomes. So the probability is $1/6$.
+
+2. What's the probability that an even number is thrown?
+
+There are three even numbers: 2, 4, 6. This means the probability is $3/6$.
+
+3. Suppose two dice are thrown, what's the probability that the their sum adds up to 11 or less?
+
+The easiest way to answer this question is to realise that there is only one way that a 12 can be thrown: 6-6. There are 36 possible outcomes of throwing two dice. So:
+
+\begin{equation}
+\mathbb{P}(12) = 1/36
+\end{equation}
+
+We can then obtain:
+
+\begin{equation}
+\mathbb{P}(<12) = 1 - 1/36 = 35/36
+\end{equation}
+
+4. Advanced: if six dice are thrown, what's the probability that one of each of the numbers is obtained?
+
+The way to think about this is to realise that, as more dice are incrementally thrown, the probability decreases.
+
+- When the first die is thrown, all possible outcomes can lead to a "success".
+- When the next die is thrown, all but one number can still lead to a success, so the probability we are still "on" for a success is $5/6$.
+- When the third die is thrown, there are two numbers which can end our run, so the probability we are still on is $4/6$.
+- And so on until our last die is thrown.
+
+This means the probability is:
+
+\begin{equation}
+\frac{6}{6} \times \frac{5}{6} \times \frac{4}{6} \times \frac{3}{6} \times \frac{2}{6} \times \frac{1}{6} = \frac{720}{46656} \approx 0.015
+\end{equation}
+
+
+```{r}
+throw_dice <- function(num_rolls) {
+  sample(1:6, num_rolls, replace=TRUE)
+}
+
+is_number_present <- function(number, rolls) {
+  count <- sum(rolls == number)
+  is_present <- ifelse(count > 0, 1, 0)
+  is_present
+}
+
+check_all_present <- function(rolls) {
+  is_present <- vector(length=length(rolls))
+  for(i in seq_along(rolls))
+    is_present[i] <- is_number_present(i, rolls)
+  all_present <- mean(is_present) == 1
+  all_present
+}
+
+throw_then_check <- function(num_rolls) {
+  rolls <- throw_dice(num_rolls)
+  check_all_present(rolls)
+}
+
+# conduct lots of replicates and calculate probability
+num_replicates <- 10000
+count_all <- 0
+for(i in 1:num_replicates) {
+  is_success <- throw_then_check(6)
+  if(is_success)
+    count_all = count_all + 1
+}
+
+# probability
+count_all / num_replicates
+```
+
+

@@ -124,6 +124,14 @@
 			\item 10.45am-midday: follow along lecture and problems
 		\end{itemize}
 		
+		\vspace{0.5cm}
+		
+		Note: problems will involve both pen and paper type questions \textit{and} those using R.
+		
+		Levels: each problem set will have at least one \textit{advanced} question.
+		
+		Time: if you don't finish the questions in time, don't worry.
+		
 	\end{frame}
 
 	\begin{frame}
@@ -403,16 +411,15 @@
 	
 	
 	\begin{frame}
-		\frametitle{}
 		\Large Questions?
 	\end{frame}
 	
 	
 	\begin{frame}
-		\frametitle{Problems}
+		\frametitle{Problems: dice}
 		
 		\begin{figure}[ht]
-			\centerline{\includegraphics[width=0.3\textwidth]{./figures/dice.png}}
+			\centerline{\includegraphics[width=0.2\textwidth]{./figures/dice.png}}
 		\end{figure}
 	
 	Consider a six-sided die with numbers 1-6 on each face that is thrown once.
@@ -420,11 +427,98 @@
 		\begin{enumerate}
 			\item What's the probability that a six is thrown?
 			\item What's the probability that an even number is thrown?
-			\item What's the probability that either an even number or one is thrown?
-			\item Suppose I throw two dice, what's the probability that the their sum adds up to 11 or less?
+			\item Suppose two dice are thrown, what's the probability that the their sum adds up to 11 or less?
+			\item \textit{Advanced}: if six dice are thrown, what's the probability that one of each of the numbers is obtained?
 		\end{enumerate}
 		
 	\end{frame}
+
+
+	\begin{frame}
+		\frametitle{Example: a random sweet}
+		
+		Suppose you visit a sweet shop. The shop produces both ice cream and cake. It also offers three sauces: strawberry, vanilla and chocolate.
+		
+		\vspace{0.5cm}
+		
+		Unlike most shops, you don't get a choice. The way the shopkeeper allocates food is they randomly choose either a ice cream or cake (selecting either with equal probability). They then randomly select a sauce from the three available (again with equal probability of each).
+		
+		\vspace{0.5cm}
+		
+		Suppose you like anything with chocolate sauce. What's the probability that you obtain this?
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{A naive way to count}
+		
+		How many outcomes are there? Cake with strawberry, cake with vanilla, cake with chocolate, ice cream with strawberry, ice cream with vanilla, ice cream with chocolate.  So there are \textit{six} outcomes.
+		
+		\vspace{0.5cm}
+		
+		How many of these have chocolate sauce: two.
+		
+		\vspace{0.5cm}
+		
+		\begin{equation}
+			\mathbb{P}(\text{chocolate}) = \frac{2}{6}
+		\end{equation}
+		
+	\end{frame}
+
+
+	\begin{frame}
+		\frametitle{A sweet tree: making counting easier}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.7\textwidth]{./figures/tree.pdf}}
+		\end{figure}
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Using trees to determine probabilities}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.7\textwidth]{./figures/tree-prob.pdf}}
+		\end{figure}
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{What's the probability of cake with chocolate sauce?}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.4\textwidth]{./figures/tree-prob-choc-cake.pdf}}
+		\end{figure}
+	
+	To obtain this probability, we take the probabilities obtained along the path and multiply:
+	
+	\begin{equation}
+		\mathbb{P}(\text{chocolate cake}) = \frac{1}{2} \times \frac{1}{3} = \frac{1}{6}
+	\end{equation}
+
+
+	This is equivalent to counting possibilities (if all choices equally likely).
+	
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Chocolate probability}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.4\textwidth]{./figures/tree-prob-choc.pdf}}
+		\end{figure}
+	
+	Sum up probabilities:
+	
+	\begin{equation}
+		\mathbb{P}(\text{chocolate}) = \frac{1}{2} \times \frac{1}{3} +  \frac{1}{2} \times \frac{1}{3} = \frac{2}{6}
+	\end{equation}
+		
+		
+	\end{frame}	
+
 
 	\section{Conditional probability}
 	\frame{\tableofcontents[currentsection]}
@@ -432,7 +526,15 @@
 	\begin{frame}
 		\frametitle{What is conditioning?}
 		
+		When we receive new information, we want to take it into account to make better predictions.
 		
+		\vspace{0.5cm}
+		
+		Effectively, learning something about the world (typically) helps us to reduce our own uncertainty.
+		
+		\vspace{0.5cm}
+		
+		\textit{Conditioning} is how this is handled in statistics.
 		
 	\end{frame}
 
