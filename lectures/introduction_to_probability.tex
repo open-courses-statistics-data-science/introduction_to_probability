@@ -859,7 +859,117 @@
 	\section{Bayes' rule}
 	\frame{\tableofcontents[currentsection]}
 	
-	Use breast cancer example.
+	\begin{frame}
+		\frametitle{Two ways to arrive at same intersection}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.5\textwidth]{./figures/pebble_world_and.png}}
+		\end{figure}
+		
+		How to calculate $\mathbb{P}(A \cap B)$? Law of conditional probability:
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{First way}
+		
+		\begin{equation}
+		\mathbb{P}(A \cap B) = \mathbb{P}(A) \times \mathbb{P}(B|A)
+		\end{equation}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Second way}
+		
+		\begin{equation}
+		\mathbb{P}(A \cap B) = \mathbb{P}(B) \times \mathbb{P}(A|B)
+		\end{equation}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Bayes' rule}
+		
+		Combining:
+		
+		\begin{equation}
+		\mathbb{P}(A) \times \mathbb{P}(B|A) = \mathbb{P}(B) \times \mathbb{P}(A|B)
+		\end{equation}
+		
+		which we can rearrange to:
+		
+		\begin{equation}
+		\mathbb{P}(A|B) = \frac{\mathbb{P}(A) \times \mathbb{P}(B|A)}{\mathbb{P}(B)}
+		\end{equation}
+		
+		this is known as \textit{Bayes' rule} and is the foundation of \textit{Bayesian inference}.
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Example use of Bayes' rule: breast cancer screening}
+		
+		\begin{figure}[ht]
+			\includegraphics[width=0.6\textwidth]{./figures/crab2.jpeg}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Screening probabilities}
+		
+		
+		\begin{figure}[ht]
+			\includegraphics[width=0.3\textwidth]{./figures/crab2.jpeg}
+		\end{figure}
+		
+		Suppose:
+		\begin{itemize}
+			\item The probability that a randomly chosen 40 year old woman has breast cancer is approximately $\frac{1}{100}$.
+			\item If a woman has breast cancer the probability they will test positive in a mammography is about 90\%.
+			\item However there is a risk of about 8\% of a false positive result of the test.
+		\end{itemize}
+		
+	Question: given that a woman tests positive, what is the probability that she has breast cancer?
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Bayes' rule in action: breast cancer screening}
+		
+		\textit{Answer:} we want to find the probability the woman has cancer \textit{given} she has tested positive, which we can do via Bayes' rule (it's the same for pmfs as it was for pdfs):
+		
+		\begin{figure}[ht]
+			\includegraphics[width=1\textwidth]{./figures/lec1_cancer.pdf}
+		\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Bayes' rule in action: breast cancer screening}
+		
+		\begin{figure}[ht]
+			\includegraphics[width=1\textwidth]{./figures/lec1_cancer2.pdf}
+		\end{figure}
+	
+		Calculate denominator using the law of total probability:
+		
+		\begin{figure}[ht]
+			\includegraphics[width=0.8\textwidth]{./figures/lec1_cancer3.pdf}
+		\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Bayes' rule in action: breast cancer screening}
+		Putting this into Bayes' rule:
+		
+		\begin{figure}[ht]
+			\includegraphics[width=1\textwidth]{./figures/lec1_cancer4.pdf}
+		\end{figure}
+		
+		Intuitively, the number of false positives dwarfs the number of true positives.
+		
+	\end{frame}
 	
 
 	\section{Random variables and probability distributions}
