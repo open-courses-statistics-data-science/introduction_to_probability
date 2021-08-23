@@ -981,9 +981,130 @@
 		
 	\end{frame}
 	
+	\begin{frame}
+		\Large Questions?
+	\end{frame}
+	
 
 	\section{Random variables and probability distributions}
-
+	\frame{\tableofcontents[currentsection]}
+	
+	\begin{frame}
+		\frametitle{Events and random variables}
+		Up until now, we have used \textit{events} to describe outcomes.
+		
+		\vspace{0.5cm}
+		
+		This notation is clunky and makes things unnecessarily tricky.
+		
+		\vspace{0.5cm}
+		
+		\textit{Random variable} notation makes things easier. Definition:
+		
+		``A random variable associates outcomes of an experiment with a number.''
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{What is a random variable?}
+		
+		Insert pebble world with pebbles annotated with numbers. Mention that we typically use capital letters for rvs.
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Example: flipping two coins}
+		
+		\begin{figure}[ht]
+			\includegraphics[width=0.5\textwidth]{./figures/coins.jpeg}
+		\end{figure}
+		
+		Suppose you flip two coins. There are four possible outcomes: $\{H,H\}, \{H,T\}, \{T,H\}, \{T,T\}$.
+		
+		\vspace{0.5cm}
+		
+		We create a random variable $X$ so that it equals the number of heads. So, here:
+		
+		\begin{itemize}
+			\item $\{T,T\}\rightarrow X=0$
+			\item $\{H,T\}$ and $\{T,H\}$ $\rightarrow$ $X=1$.
+			\item $\{H,H\} \rightarrow X=2$
+		\end{itemize}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Probability distributions}
+		
+		There are two types of random variables:
+		
+		\begin{itemize}
+			\item Discrete: e.g. $X=0, 1, 2, 3, ...$.
+			\item Continuous: e.g. $X=0.545, -4.124, 100.123$.
+		\end{itemize}
+		
+		For now, we only consider discrete random variables.
+		
+		\vspace{0.5cm}
+		
+		A \textit{probability distribution} specifies the probabilities of all events for a random variable.
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Coin flip probability distribution}
+		
+		\begin{figure}[ht]
+			\includegraphics[width=0.2\textwidth]{./figures/coins.jpeg}
+		\end{figure}
+		
+		Since this random variable $X$ is discrete, our probability distribution is known as a \textit{probability mass function} or \textit{p.m.f.}. How do we work out what it is?
+		
+		\vspace{0.5cm}
+		
+		Let's suppose the coin is fair, so that $Pr(H) = 0.5$. In that case, we can determine the probability of all possible values of $X$:
+		
+		\begin{itemize}
+			\item $\{T,T\}\rightarrow X=0$: $Pr(X=0) = 0.5^2 = 0.25$.
+			\item $\{H,T\}$ and $\{T,H\}$ $\rightarrow$ $X=1$: $Pr(X = 1) = 2 \times 0.5^2 = 0.5$
+			\item $\{H,H\} \rightarrow X=2$: $Pr(X=2) = 0.5^2 = 0.25$.
+		\end{itemize}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Visualising the p.m.f.}
+		
+		Insert graph of it.
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Conditions for a valid p.m.f.}
+		
+		So, we have a \textit{p.m.f.} $Pr(X=x)$ where $x$ denotes the specific values that the random variable takes. How can I tell that it's valid:
+		
+		\begin{itemize}
+			\item $Pr(X=x) \geq 0$ for all feasible $x$ values: this just ensures we can't have a negative probability.
+			\item $\sum_{x} Pr(X=x) = 1$: this just means that the outcome of the experiment must be in the set of feasible $x$ values.
+		\end{itemize}
+		
+		Are these satisfied for our coin example: all probabilities are non-negative, so ok there. In terms of the sum:
+		
+		\begin{equation}
+		Pr(X=0) + Pr(X=1) + Pr(X=2) = 0.25 + 0.5 + 0.25 = 1.
+		\end{equation}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Types of distributions}
+		Mention that coin flipping is an example of the binomial.
+		
+	\end{frame}
+	
+	\section{Expectations}
+	\frame{\tableofcontents[currentsection]}
 
 	\section{Joint distributions}
 	\frame{\tableofcontents[currentsection]}
