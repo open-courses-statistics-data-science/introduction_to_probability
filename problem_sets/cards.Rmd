@@ -1,0 +1,48 @@
+---
+title: "Cards problems and answers"
+output: html_notebook
+---
+
+Suppose you have a standard deck of 52 cards across four suits -- two of which are red; two black. The cards in order are: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A. Imagine in all cases that cards are drawn from a shuffled deck.
+
+1. Consider the event $A$ that a card is a Four and $B$ that the card is black. Are these events $A$ and $B$ independent?
+
+Yes, because $P(A) = 4/52 = 1/13$ and $P(A|B) = 2 / 26 = 1/13$. So $P(A)=P(A|B)$.
+
+2. Consider the event $A$ that the card is red and $B$ that it is black. Are these events $A$ and $B$ independent?
+
+No. If I know that a card is black, it cannot be red: these events are disjoint.
+
+3. What's the probability that, given the card has a value above 8, that it is an Ace?
+
+The cards above 8 are: 9, 10, J, Q, K, A. So the probability that it is an Ace is $1/6$.
+
+4. Advanced: suppose two cards are drawn.
+
+a. What's the probability that the second card is an Ace given that the first card is an Ace?
+
+If the first card is an Ace, there are only 3 remaining for the second draw. So the probability is $3/51$.
+
+b. What's the probability that second card is an Ace given that at least one is an Ace?
+
+We know that at least one card is an Ace. This can happen one of three ways:
+
+- A-O: where A means Ace and O means another card
+- A-A
+- O-A
+
+So, we want to calculate the probability that either A-A or O-A occurs given that we know one of the above three has happened. This is given by:
+
+$P(A\text{-}A \cup O\text{-}A|A\text{-}O \cup A\text{-}A \cup O\text{-}A) = \frac{P(A\text{-}A \cup O\text{-}A)}{P(A\text{-}O \cup A\text{-}A \cup O\text{-}A)}$
+
+Calculating each of these terms:
+
+$P(A\text{-}O \cup A\text{-}A \cup O\text{-}A) = 4/52 \times 48/51 + 4/52 \times 3/51 + 48/52 \times 4/51 = 33/221$
+
+$P(A\text{-}A \cup O\text{-}A) = 4/52 \times 3/51 + 48/52 \times 4/51 = 1/13$
+
+So:
+
+$P(A\text{-}A \cup O\text{-}A|A\text{-}O \cup A\text{-}A \cup O\text{-}A) = \frac{1/13}{33/221} = \frac{17}{33}\approx 0.52$
+
+This makes intuitive sense since A-O and O-A are equally likely, so if we did not consider A-A, the probability would be 0.5. Including the A-A possibility makes it ever so slightly (since this event is unlikely) that the second card is an Ace, elevating the probability above 0.5.
