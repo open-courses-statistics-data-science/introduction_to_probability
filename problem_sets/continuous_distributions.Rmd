@@ -1,0 +1,22 @@
+---
+title: "Continuous distributions: problems and answers"
+output: html_notebook
+---
+
+1. Why can a probability zero event happen?
+
+Consider the probability that a single real number (for example, 1.2) is drawn from a normal distribution. If we repeatedly drew from a normal distribution and calculated the fraction of times this occurred, it would indeed be zero since the numerator would be dominated by the denominator: so, by the frequentist definition of probability, this event is of probability zero.
+
+But, we know that it is still possible to draw 1.2. We know this because each time we draw from a normal distribution, we obtain a particular number. So this event isn't impossible.
+
+An impossible event would be drawing a value 1.2 from a Poisson since it is outside of the set of possible outcomes.
+
+2. Show that a normal distribution with $\mu=0$ has a mean of zero.
+
+You can show this by integration. It's easier however to argue by symmetry. The expected value of the normal is obtained by:
+
+\begin{equation}
+\mathbb{E}(x) = \int_{-\infty}^{+\infty} x \frac{1}{\sqrt{2\pi \sigma^2}} \exp(\frac{-x^2}{2\sigma^2}) dx
+\end{equation}
+
+The function on the RHS is odd. So that means that the integral between $-a$ and $a$ must be zero.

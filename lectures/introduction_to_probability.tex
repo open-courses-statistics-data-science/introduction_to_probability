@@ -1007,9 +1007,11 @@
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{What is a random variable?}
+		\frametitle{Pebble world random variable example}
 		
-		Insert pebble world with pebbles annotated with numbers. Mention that we typically use capital letters for rvs.
+		\begin{figure}[ht]
+			\includegraphics[width=0.6\textwidth]{./figures/pebble_world_rvs.png}
+		\end{figure}
 		
 	\end{frame}
 	
@@ -1333,6 +1335,20 @@
 	
 	\begin{frame}
 		\Large Questions?
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Problems: fair game}
+		
+		Consider a fair game which costs $\pounds Y$ to play: a fair coin is flipped twice, and the number of heads $X$ recorded. The game pays the player $\pounds X$.
+		
+		\begin{enumerate}
+			\item Calculate $\mathbb{E}(X)$.
+			\item What is a fair price to play? Here, \textit{fair} means that a player and the house should be even in the long-run.
+			\item \textit{Advanced}: suppose you play the game $T$ times. What's the probability that your profit exceeds your loss if $Y=1$? Check your answer in R.
+			\item \textit{More advanced}: suppose you start with a wealth of $\pounds 1$ and continuing to replay the game until your profits fall to zero, at which point you stop. What is the probability that you last for 10 games or more? Answer using R or otherwise.
+		\end{enumerate}
+		
 	\end{frame}
 
 	\section{Joint distributions}
@@ -1692,15 +1708,6 @@
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Problems}
-		
-		\begin{itemize}
-			\item Show that a normal distribution with $\mu=0$ has a mean of zero.
-		\end{itemize}
-		
-	\end{frame}
-	
-	\begin{frame}
 		\frametitle{Multivariate continuous distributions}
 		
 		Like for discrete \textit{r.v.s}, we would like to consider interacting continuous \textit{r.v.s}. Multivariate continuous \textit{p.d.f.s} allow us to do this.
@@ -1725,8 +1732,19 @@
 	\end{frame}
 	
 	\begin{frame}
-		Problem question: why can a probability zero event happen?
+		
+		\frametitle{Problems: continuous distributions}
+		
+		\begin{enumerate}
+			\item Why can a probability zero event happen?
+			\item Show that a normal distribution with $\mu=0$ has a mean of zero.
+		\end{enumerate}
+
 	\end{frame}
 	
+	
+	\begin{frame}
+		\Large Questions?
+	\end{frame}
 	
 \end{document} 

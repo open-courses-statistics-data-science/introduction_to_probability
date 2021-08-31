@@ -1,0 +1,94 @@
+---
+title: "Fair game problems and answers"
+output: html_notebook
+---
+
+Consider a fair game which costs $Y$ to play: a fair coin is flipped twice, and the number of heads $X$ recorded. The game pays the player $X$.
+
+1. Calculate $\mathbb{E}(X)$.
+
+Here, $\mathbb{E}(X) = 0 . 1/4 + 1 . 1/2 + 2 . 1/4 = 1$
+
+2. What is a fair price to play? Here, fair means that a player and the house should be even in the long-run.
+
+The expected value of the game is the long-term mean, so a fair price is $1$.
+
+3. Advanced: suppose you play the game 10 times. What's the probability that your profit exceeds your loss if $Y=1$? Check your answer in R.
+
+We create a random variable $Z_t$ to indicate the profit after $t$ plays:
+
+\begin{equation}
+Z_t = \sum_{\tau=1}{t} (X_t - 1) = \sum_{\tau=1}{t} X_t - t
+\end{equation}
+
+where $X_t$ is a two-flip binomial with probability 1/2. Since the individual random variables all have the same probability, their sum is also a binomial (you can prove this via moment generating functions: see chapter in Blitzstein and Hwang book):
+
+\begin{equation}
+\zeta_t := \sum_{\tau=1}{t} X_t
+\end{equation}
+
+follows: $\zeta_t \sim \mathcal{B}(2t, 0.5)$.
+
+For 10 plays, the probability is then:
+
+\begin{equation}
+Pr(Z_{10} > 0) = Pr(\zeta_{10} > 10) = 1 - F_Z(10)
+\end{equation}
+
+which we can calculate using:
+
+```{r}
+1 - pbinom(10, 2 * 10, 0.5)
+```
+
+Checking via R
+```{r}
+one_game <- function() {
+  X <- rbinom(1, 2, 0.5)
+  X - 1
+}
+
+many_games <- function(t) {
+  profit <- 0
+  for(tau in 1:t)
+    profit <- profit + one_game()
+  profit
+}
+
+# now simulate many games
+nreplicates <- 100000
+profits <- vector(length = nreplicates)
+t <- 10
+for(i in 1:nreplicates)
+  profits[i] <- many_games(t)
+mean(profits > 0)
+```
+
+4. More advanced: suppose you start with a wealth of $1$ and continuing to replay the game until your profits fall to zero, at which point you stop. What is the probability that you last for 10 games or more?
+
+
+Note, that the distribution is very long-tailed. So sometimes simulations of the game if left unchecked can last a long time. Here, since we are only interested in whether the number of plays exceeds a threshold, we don't directly simulate the game: instead we just determine whether this threshold is exceeded.
+```{r}
+one_game_revenue <- function() {
+  X <- rbinom(1, 2, 0.5)
+  X
+}
+
+many_games_exceeds_threshold <- function(threshold) {
+  num_plays <- 0
+  wealth <- 1
+  while(wealth > 0 & num_plays < threshold) {
+    wealth <- wealth + one_game_revenue() - 1
+    num_plays <- num_plays + 1
+  }
+  ifelse(num_plays >= threshold, 1, 0)
+}
+
+# replicate many times
+nreplicates <- 100000
+num_plays <- vector(length = nreplicates)
+for(i in 1:nreplicates)
+  num_plays[i] <- many_games_exceeds_threshold(threshold=10)
+mean(num_plays)
+```
+
