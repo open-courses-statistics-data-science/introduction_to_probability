@@ -1163,29 +1163,48 @@
 			
 	\end{frame}
 	
-	
 	\begin{frame}
-		\frametitle{Poisson distribution}
+		\frametitle{Cumulative distribution function}
 		
-		There are many other discrete distributions: each of these is appropriate under a different set of circumstances. One such distribution is the \textit{Poisson}. This distribution is used to count the occurrence of something over a fixed interval in time or space.
-		
-		\vspace{0.5cm}
-		
-		For example, this distribution could be used to model outcome of counting cars passing in 15 minute intervals.
+		A \textit{probability mass function} yields the probability of a particular outcome.
 		
 		\vspace{0.5cm}
 		
-		The assumptions underpinning this distribution is:
+		A \textit{cumulative distribution function} or \textit{c.d.f.} yields the probability that an outcome is less than or equal to a certain value:
+		
+		\begin{equation}
+		F_X(x) := Pr(X\leq x) = \sum_{x_i \leq x} Pr(X = x_i)
+		\end{equation}
+		
+		E.g.s.:
 		
 		\begin{itemize}
-			\item Outcome can be $0, 1, 2, 3, 4, ...., \infty$
-			\item Each individual event is not influenced by the occurrence of other events.
+			\item $F_X(0) = Pr(X=0)$
+			\item $F_X(1) = Pr(X=0) + Pr(X=0)$
 		\end{itemize}
 		
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Lots of probability distributions}
+		\frametitle{Coin flips: \textit{p.m.f.}}
+		
+		\begin{figure}[ht]
+			\includegraphics[width=0.8\textwidth]{./figures/binomial_cdf_1.pdf}
+		\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Coin flips: \textit{p.m.f.} and \textit{c.d.f.}}
+		
+		\begin{figure}[ht]
+			\includegraphics[width=0.8\textwidth]{./figures/binomial_cdf_2.pdf}
+		\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Lots of other probability distributions}
 		
 		\begin{figure}[h]
 			\centerline{\includegraphics[width=0.8\textwidth]{figures/Distributions_nexusOfRelations.pdf}}
@@ -1193,12 +1212,51 @@
 	
 	\end{frame}
 	
+		\begin{frame}
+			\frametitle{Example: Poisson distribution}
+			
+			There are many other discrete distributions: each of these is appropriate under a different set of circumstances. One such distribution is the \textit{Poisson}. This distribution is used to count the occurrence of something over a fixed interval in time or space.
+			
+			\vspace{0.5cm}
+			
+			For example, this distribution could be used to model outcome of counting cars passing in 15 minute intervals.
+			
+			\vspace{0.5cm}
+			
+			The assumptions underpinning this distribution is:
+			
+			\begin{itemize}
+				\item Outcome can be $0, 1, 2, 3, 4, ...., \infty$
+				\item Each individual event is not influenced by the occurrence of other events
+			\end{itemize}
+			
+		\end{frame}
+	
 	\begin{frame}
 		\frametitle{How to choose one}
 		
 		\begin{figure}[h]
 			\centerline{\includegraphics[width=0.7\textwidth]{figures/Distributions_likelihoodTree.pdf}}
 		\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\Large Questions?
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Problems: coin flips}
+		
+		Suppose you flip a fair coin 10 times.
+		
+		\begin{enumerate}
+			\item What's the probability that you obtain 10 heads?
+			\item What's the single most likely possible outcome?
+			\item What's the probability you obtain 9 or more heads? Hint: use R's ``pbinom'' function (which is just the \textit{c.d.f.}).
+			\item Given that you know 3 or more heads have been obtained, what's the probability that you have more than 5 heads?
+			\item \textit{Advanced:} what's the minimum number of fair coin flips needed to ensure that the chance of obtaining more than 5 heads exceeds 99\%? Answer this by trial and error using R's ``pbinom'' function.
+		\end{enumerate}
 		
 	\end{frame}
 	

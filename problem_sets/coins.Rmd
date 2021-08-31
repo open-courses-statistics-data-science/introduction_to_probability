@@ -1,0 +1,58 @@
+---
+title: "Coins problems and answers"
+output: html_notebook
+---
+
+Suppose you flip a fair coin 10 times.
+
+1. What's the probability that you obtain 10 heads?
+
+Suppose $Pr(H)=0.5$. There is only one way to obtain this result, when all heads occur, so: $Pr(X=9)=0.5^10=1/1024$.
+
+2. What's the single most likely possible outcome?
+
+$X=5$ is most likely.
+
+You can determine this either by symmetry arguments based on the binomial coefficient. Or you can do it by differentiating the probability mass function with respect to $X$. Or finally, you can use R to determine this numerically.
+
+```{r}
+x <- 0:10
+n <- 10
+theta <- 0.5
+probs <- dbinom(x, n, theta)
+plot(x, probs)
+```
+
+3. What's the probability you obtain 9 or more heads?
+
+The easiest way to determine this is via the cdf:
+
+$Pr(X\geq 9) = 1 - F_X(8)$
+
+This can be answered in R using:
+
+```{r}
+1 - pbinom(8, 10, 0.5)
+```
+
+4. Given that you know 3 or more heads have been obtained, what's the probability that you have more than 5 heads?
+
+This is a conditional probability:
+
+$Pr(X > 5 | X \geq 3) = \frac{Pr(X > 5 \cap X \geq 3)}{Pr(X \geq 3)}= \frac{Pr(X > 5)}{Pr(X \geq 3)} = \frac{1-F_X(5)}{1-F_X(2)}$
+
+which we can obtain in R using:
+
+```{r}
+(1 - pbinom(5, 10, 0.5)) / (1 - pbinom(2, 10, 0.5))
+```
+
+5. \textit{Advanced:} what's the minimum number of fair coin flips needed to ensure that the chance of obtaining more than 5 heads exceeds 99\%?
+
+```{r}
+n <- seq(10, 100, 1)
+prob_exceeds_5 <- function(n) {1 - pbinom(5, n, 0.5)}
+idx <- which(prob_exceeds_5(n) > 0.99)[1]
+print(paste0("min number of flips = ", n[idx]))
+```
+
