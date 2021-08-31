@@ -1341,6 +1341,10 @@
 	\begin{frame}
 		\frametitle{Why we need more random variables?}
 		
+		Previously, we considered only a single random variable at a time.
+		
+		\vspace{0.5cm}
+		
 		In science, there are usually a range of interacting factors which need to be accounted for:
 		
 		\begin{itemize}
@@ -1348,13 +1352,276 @@
 			\item Epidemiology: outcome of a cluster randomised trial depends on attributes of the clusters, environmental variables such as the weather
 		\end{itemize}
 		
+		\textit{Joint distributions} are multivariate generalisations of the types of the univariate distributions we have considered thus far.
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Horse races}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.3\textwidth]{./figures/horse.jpeg}}
+		\end{figure}
+		
+		Imagine two horse races:
+		
+		\begin{itemize}
+			\item Horse A competes in race a, and we consider $X=0$ if it loses; $X=1$ if it wins
+			\item Horse B competes in race b, and we consider $Y=0$ if it loses; $Y=1$ if it wins
+		\end{itemize}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Horse race bivariate distribution}
+		
+		Based on historical outcomes, the distribution is:
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.4\textwidth]{./figures/horse_race_base.pdf}}
+		\end{figure}
+		
+		Note, this is a two dimensional probability distribution $Pr(X=x, Y=y)$. For example, $Pr(X=0, Y=1)=0.3$.
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Checking validity}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.4\textwidth]{./figures/horse_race_base.pdf}}
+		\end{figure}
+		
+		All values of distribution are non-negative. Summing the values:
+		
+		\begin{equation}
+		\sum_{x_i} \sum_{y_i} Pr(X=x_i, Y=y_i) = 0.5 + 0.3 + 0.1 + 0.1 = 1
+		\end{equation}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Marginal distributions}
+		
+		Suppose we don't observe $Y$, so only want to know the probability distribution of $X$ \textit{irrespective} of $Y$. How do we obtain this?
+		
+		\begin{equation}
+		Pr(X=x_i) = \sum_{y_i} Pr(X=x_i, Y=y_i)
+		\end{equation}
+		
+		This summation is known as \textit{marginalising} the joint distribution; accordingly, $Pr(X=x_i)$ is the \textit{marginal} \textit{p.m.f.} of $X$. But what does this look like graphically? 
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Marginal distributions: visualised}
+		
+			\begin{figure}[ht]
+				\centerline{\includegraphics[width=0.6\textwidth]{./figures/horse_race_marginal.pdf}}
+			\end{figure}
+			
+	\end{frame}
+	
+		\begin{frame}
+			\frametitle{Independence of random variables}
+			
+			Much like for events, we can consider independent random variables. For a pair of bivariate discrete r.v.s this means:
+			
+			\begin{equation}
+			Pr(X=x_i, Y=y_i) = Pr(X=x_i) \times Pr(Y=y_i)
+			\end{equation}
+			
+			Question: In our horse race example, are $X$ and $Y$ independent?
+			
+			\begin{figure}[ht]
+				\centerline{\includegraphics[width=0.3\textwidth]{./figures/horse_race_base.pdf}}
+			\end{figure}
+			
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Checking independence}
+			
+			\begin{figure}[ht]
+				\centerline{\includegraphics[width=0.5\textwidth]{./figures/horse_race_checking_independence.pdf}}
+			\end{figure}
+			
+			Taking a single value:
+			
+			\begin{equation}
+			Pr(X=0, Y=0) = 0.5 \neq 0.8 \times 0.6
+			\end{equation}
+			
+		\end{frame}
+	
+	\begin{frame}
+		\frametitle{Conditional distribution}
+		
+		Suppose we know that $X=1$, what then does the updated probability distribution look like for $Y$? Use law of conditional probabilities:
+		
+		\begin{equation}
+		Pr(Y=y_i|X=1) = \frac{Pr(Y=y_i,X=1)}{Pr(X=1)}
+		\end{equation}
+		
+		But what does this look like graphically?
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Conditional distribution: visualised}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.8\textwidth]{./figures/horse_race_conditional.pdf}}
+		\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\Large Questions?
 	\end{frame}
 	
 	\section{Continuous probability distributions}
 	\frame{\tableofcontents[currentsection]}
 	
 	\begin{frame}
-		\frametitle{Isn't a normal distribution arbitrary?}
+		\frametitle{Discrete and continuous random variables}
+		
+		All random variables we have considered thus far have been discrete. This makes sense for things that can be counted and things that take integer values.
+		
+		\vspace{0.5cm}
+		
+		But many objects cannot be described this way: for example, a person's height and weight; the GDP per capita of a country; and the density of mosquitoes per $\text{km}^2$. These random variables are \textit{continuous}.
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Disclaimer: things in common / things not in common}
+		
+		All of the tools we've developed thus far carry straightforwardly over to the continuous case.
+		
+		\vspace{0.5cm}
+		
+		The difference for continuous versus is around \textit{interpretation}:
+		
+		\begin{itemize}
+			\item Discrete distributions $\rightarrow$ probabilities
+			\item Continuous distributions $\rightarrow$ probability densities
+		\end{itemize}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Example: height}
+		
+		A person's height can be any value between near zero and a big number (300cm?). We can't list all possible values for the heights. Because of this, any single value has probability zero.
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.8\textwidth]{./figures/height_base.pdf}}
+		\end{figure}
+		
+		So how do we model uncertainty in height?
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Probability density}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.8\textwidth]{./figures/height_density.pdf}}
+		\end{figure}
+		
+		We attach a \textit{probability density} to each possible value the random variable can take. These densities represent a local \textit{concentration} of probability.
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Probability density function}
+		
+		The function mapping from a given value of the random variable to a density is known as the \textit{probability density function} or \textit{p.d.f.} for short.
+		
+		\vspace{0.5cm}
+		
+		It is often written using a lowercase ``p''. We often ditch the notation for a particular value of the \textit{r.v.} for continuous variables, so write it:
+		
+		\begin{equation}
+		p(X)
+		\end{equation}
+		
+		But how do we use probability densities to determine probabilities?
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Regions}
+		
+		Whilst a single value has probability zero, we would like a finite interval or region to potentially have non-zero probability. For example, the probability that height lies between 0.1cm and 3m should be close to 1.
+		
+		\vspace{0.5cm}
+		
+		To determine probabilities, we integrate the probability density:
+		
+		\begin{equation}
+		Pr(h_1 \leq H \leq h_2) = \int_{h_1}^{h_2} p(H) dH
+		\end{equation}
+		
+		What does this amount to?
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Visualising integration}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.8\textwidth]{./figures/height_density_area.pdf}}
+		\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Valid \textit{p.d.f.}conditions}
+		
+		\textit{Integration} for continuous distributions is analogous to \textit{summation} for discrete distributions. So, our conditions for a valid \textit{p.d.f.} are:
+		
+		\begin{itemize}
+			\item the probability density must always be non-negative
+			\item the integral of the \textit{p.d.f.} over the entire \textit{support} of a distribution must be 1:
+		\end{itemize}
+		
+		\begin{equation}
+		\int_{0}^{\infty} p(H) dH = 1
+		\end{equation}
+		
+		The \textit{support} of a distribution is the region over which the random variable can possibly take those values. For heights, no one can have a negative height, so we set a lower bound of zero; there is no absolute upper cut-off, so we set an upper bound of infinity.
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Key distribution example: normal}
+		
+		The \textit{normal distribution}, which has a \textit{p.d.f.} described by:
+		
+		\begin{equation}
+		p(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp(-\frac{(x-\mu)^2}{2\sigma^2})
+		\end{equation}
+		
+		This distribution has two parameters $\mu$, its mean, and $\sigma$, its standard deviation.
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.5\textwidth]{./figures/normal_distribution.pdf}}
+		\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Why is a normal ``normal''?}
+		
+		The normal distribution is used throughout statistics. It gets used almost exclusively in linear regression modelling -- a very important area of statistics.
+		
+		\vspace{0.5cm}
+				
+		Isn't it arbitrary?
+		
+		\vspace{0.5cm}
 		
 		No! Why? The central limit theorem. 
 		
@@ -1384,7 +1651,7 @@
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Two flips flips}
+		\frametitle{Two flips}
 		
 		\begin{figure}[ht]
 			\centerline{\includegraphics[width=0.9\textwidth]{./figures/binomial_2.pdf}}
@@ -1423,5 +1690,43 @@
 		In the coin flipping case, we effectively calculated the average number of independent coin flips landing heads up $\implies$ CLT applies.
 		
 	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Problems}
+		
+		\begin{itemize}
+			\item Show that a normal distribution with $\mu=0$ has a mean of zero.
+		\end{itemize}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Multivariate continuous distributions}
+		
+		Like for discrete \textit{r.v.s}, we would like to consider interacting continuous \textit{r.v.s}. Multivariate continuous \textit{p.d.f.s} allow us to do this.
+		
+		\vspace{0.5cm}
+		
+		probability of the set $\mathcal{C}$ defined by: $x_1 \leq x \leq x_2$ and $y_1 \leq y \leq y_2$: 
+		
+		\begin{equation}
+		 Pr(\mathcal{C}) = \int_{x_1}^{x_2}\int_{y_1}^{y_2} p(x, y)dx dy
+		\end{equation}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Visualising a probability calculation}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.9\textwidth]{./figures/multivariate_continuous_volume.pdf}}
+		\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		Problem question: why can a probability zero event happen?
+	\end{frame}
+	
 	
 \end{document} 
