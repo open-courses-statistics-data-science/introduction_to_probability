@@ -79,6 +79,7 @@
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage{epigraph}
+\usepackage{animate}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -1070,12 +1071,16 @@
 			\item $\{H,H\} \rightarrow X=2$: $Pr(X=2) = 0.5^2 = 0.25$.
 		\end{itemize}
 		
+		Important: note that there are \textit{twice} as many ways to get $X=1$.
+		
 	\end{frame}
 	
 	\begin{frame}
 		\frametitle{Visualising the p.m.f.}
 		
-		Insert graph of it.
+		\begin{figure}[ht]
+			\includegraphics[width=0.8\textwidth]{./figures/binomial.pdf}
+		\end{figure}
 		
 	\end{frame}
 	
@@ -1098,8 +1103,102 @@
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Types of distributions}
-		Mention that coin flipping is an example of the binomial.
+		\frametitle{The binomial distribution}
+		The coin flipping case is an example of a particular distribution known as the \textit{binomial}. This sort of distribution rises when you have:
+		
+		\begin{itemize}
+			\item A fixed number of \textit{trials} (e.g. flips) with a binary outcome: e.g. heads or tails
+			\item The outcome of a given trial does not depend on the previous outcome. I.e. \textit{independence}
+		\end{itemize}
+		
+		Like all probability distributions, the binomial can be used in many different situations. For example: COVID-19 testing, drug resistance and so on.
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Many coin flips}
+		
+		Suppose now we flip our fair coin 10 times: the coin can now land heads up $X=0, 1, 2, ..., 9, 10$ times. What is the probability of each outcome?
+		
+		\begin{equation}
+		Pr(X=x) = \textcolor{blue}{\binom{10}{x}} \textcolor{orange}{0.5^x} \textcolor{green}{(1 - 0.5)^{10-x}}
+		\end{equation}
+		
+		\begin{itemize}
+			\item $\textcolor{blue}{\binom{10}{x}}$ accounts for the number of ways to achieve a particular number of heads $x$. E.g there is 1 way to obtain all heads and 252 ways to obtain 5 heads
+			\item $\textcolor{orange}{0.5^x}$ multiplies individual probabilities of heads (assumes independence)
+			\item $\textcolor{green}{(1 - 0.5)^{10-x}}$ multiplies individual probabilities of tails (assumes independence)
+		\end{itemize}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Many coin flips: visualised}
+		
+		\begin{figure}[ht]
+			\includegraphics[width=0.8\textwidth]{./figures/binomial_10.pdf}
+		\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{A biased coin}
+		
+		Suppose instead of our fair coin, we have a coin with an arbitrary probability of heads: $Pr(H) = \theta\in [0, 1]$. Probability distribution becomes:
+		
+		\begin{equation}
+		Pr(X=x) = \binom{10}{x} \theta^x (1 - \theta)^{10 - x}
+		\end{equation}
+		
+		How does changing $\theta$ change how the probability distribution looks?
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{A biased coin: visualised}
+		
+		\begin{figure}[t]
+			\centerline{\animategraphics[width=0.8\textwidth,controls,buttonsize=1em,buttonfg=0.5]{2}{./figures/animations/binomial_biased_}{1}{21}}
+		\end{figure}
+			
+	\end{frame}
+	
+	
+	\begin{frame}
+		\frametitle{Poisson distribution}
+		
+		There are many other discrete distributions: each of these is appropriate under a different set of circumstances. One such distribution is the \textit{Poisson}. This distribution is used to count the occurrence of something over a fixed interval in time or space.
+		
+		\vspace{0.5cm}
+		
+		For example, this distribution could be used to model outcome of counting cars passing in 15 minute intervals.
+		
+		\vspace{0.5cm}
+		
+		The assumptions underpinning this distribution is:
+		
+		\begin{itemize}
+			\item Outcome can be $0, 1, 2, 3, 4, ...., \infty$
+			\item Each individual event is not influenced by the occurrence of other events.
+		\end{itemize}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Lots of probability distributions}
+		
+		\begin{figure}[h]
+			\centerline{\includegraphics[width=0.8\textwidth]{figures/Distributions_nexusOfRelations.pdf}}
+		\end{figure}
+	
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{How to choose one}
+		
+		\begin{figure}[h]
+			\centerline{\includegraphics[width=0.7\textwidth]{figures/Distributions_likelihoodTree.pdf}}
+		\end{figure}
 		
 	\end{frame}
 	
@@ -1111,5 +1210,76 @@
 	
 	\section{Continuous probability distributions}
 	\frame{\tableofcontents[currentsection]}
+	
+	\begin{frame}
+		\frametitle{Isn't a normal distribution arbitrary?}
+		
+		No! Why? The central limit theorem. 
+		
+		\vspace{0.5cm}
+		
+		Suppose we flip a fair coin once. What does its probability distribution look like?
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{One coin flip}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.9\textwidth]{./figures/binomial_1.pdf}}
+		\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Two flips}
+		I now flip the coin 2 times.
+		
+		\vspace{0.5cm}
+		
+		Question: What does the distribution look like now?
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Two flips flips}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.9\textwidth]{./figures/binomial_2.pdf}}
+		\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{What about five flips?}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.9\textwidth]{./figures/binomial_5.pdf}}
+		\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{What about 30 flips?}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.9\textwidth]{./figures/binomial_30.pdf}}
+		\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{What's going on?}
+		The Central Limit Theorem (CLT) says that under general conditions:
+		
+		\vspace{0.5cm}
+		
+		``The distribution of the average of a large number of weakly dependent random variables is approximately normal.''
+		
+		\vspace{0.5cm}
+		
+		In the coin flipping case, we effectively calculated the average number of independent coin flips landing heads up $\implies$ CLT applies.
+		
+	\end{frame}
 	
 \end{document} 
