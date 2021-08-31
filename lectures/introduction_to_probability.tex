@@ -164,7 +164,7 @@
 		
 		Life and science are full of unknown things. We say these things are \textit{uncertain}.
 		
-		Faced with these, we can give up; \textit{Probability theory} gives us a way to make assumptions about uncertain phenomena which allows us to make progress with understanding without having to know everything.
+		Faced with these, we can give up; \textit{probability theory} gives us a way to make assumptions about uncertain phenomena which allows us to make progress with understanding without having to know everything.
 		
 		\epigraph{There are known knowns. These are things we know that we know. There are known unknowns. That is to say, there are things that we know we don't know. But there are also unknown unknowns. There are things we don't know we don't know.}{Donald Rumsfeld, 2002}
 		
@@ -939,7 +939,7 @@
 	\begin{frame}
 		\frametitle{Bayes' rule in action: breast cancer screening}
 		
-		\textit{Answer:} we want to find the probability the woman has cancer \textit{given} she has tested positive, which we can do via Bayes' rule (it's the same for pmfs as it was for pdfs):
+		\textit{Answer:} we want to find the probability the woman has cancer \textit{given} she has tested positive, which we can do via Bayes' rule:
 		
 		\begin{figure}[ht]
 			\includegraphics[width=1\textwidth]{./figures/lec1_cancer.pdf}
@@ -1001,6 +1001,8 @@
 		\vspace{0.5cm}
 		
 		\textit{Random variable} notation makes things easier. Definition:
+		
+		\vspace{0.5cm}
 		
 		``A random variable associates outcomes of an experiment with a number.''
 		
@@ -1065,12 +1067,12 @@
 		
 		\vspace{0.5cm}
 		
-		Let's suppose the coin is fair, so that $Pr(H) = 0.5$. In that case, we can determine the probability of all possible values of $X$:
+		Let's suppose the coin is fair, so that $\mathbb{P}(H) = 0.5$. In that case, we can determine the probability of all possible values of $X$:
 		
 		\begin{itemize}
-			\item $\{T,T\}\rightarrow X=0$: $Pr(X=0) = 0.5^2 = 0.25$.
-			\item $\{H,T\}$ and $\{T,H\}$ $\rightarrow$ $X=1$: $Pr(X = 1) = 2 \times 0.5^2 = 0.5$
-			\item $\{H,H\} \rightarrow X=2$: $Pr(X=2) = 0.5^2 = 0.25$.
+			\item $\{T,T\}\rightarrow X=0$: $\mathbb{P}(X=0) = 0.5^2 = 0.25$.
+			\item $\{H,T\}$ and $\{T,H\}$ $\rightarrow$ $X=1$: $\mathbb{P}(X = 1) = 2 \times 0.5^2 = 0.5$
+			\item $\{H,H\} \rightarrow X=2$: $\mathbb{P}(X=2) = 0.5^2 = 0.25$.
 		\end{itemize}
 		
 		Important: note that there are \textit{twice} as many ways to get $X=1$.
@@ -1089,17 +1091,17 @@
 	\begin{frame}
 		\frametitle{Conditions for a valid p.m.f.}
 		
-		So, we have a \textit{p.m.f.} $Pr(X=x)$ where $x$ denotes the specific values that the random variable takes. How can I tell that it's valid:
+		So, we have a \textit{p.m.f.} $\mathbb{P}(X=x)$ where $x$ denotes the specific values that the random variable takes. How can I tell that it's valid:
 		
 		\begin{itemize}
-			\item $Pr(X=x) \geq 0$ for all feasible $x$ values: this just ensures we can't have a negative probability.
-			\item $\sum_{x} Pr(X=x) = 1$: this just means that the outcome of the experiment must be in the set of feasible $x$ values.
+			\item $\mathbb{P}(X=x) \geq 0$ for all feasible $x$ values: this just ensures we can't have a negative probability.
+			\item $\sum_{x} \mathbb{P}(X=x) = 1$: this just means that the outcome of the experiment must be in the set of feasible $x$ values.
 		\end{itemize}
 		
-		Are these satisfied for our coin example: all probabilities are non-negative, so ok there. In terms of the sum:
+		Are these satisfied for our coin example? All probabilities are non-negative, so ok there. In terms of the sum:
 		
 		\begin{equation}
-		Pr(X=0) + Pr(X=1) + Pr(X=2) = 0.25 + 0.5 + 0.25 = 1.
+		\mathbb{P}(X=0) + \mathbb{P}(X=1) + \mathbb{P}(X=2) = 0.25 + 0.5 + 0.25 = 1.
 		\end{equation}
 		
 	\end{frame}
@@ -1110,7 +1112,7 @@
 		
 		\begin{itemize}
 			\item A fixed number of \textit{trials} (e.g. flips) with a binary outcome: e.g. heads or tails
-			\item The outcome of a given trial does not depend on the previous outcome. I.e. \textit{independence}
+			\item The outcome of a given trial does not depend on the previous outcome. i.e. \textit{independence}
 		\end{itemize}
 		
 		Like all probability distributions, the binomial can be used in many different situations. For example: COVID-19 testing, drug resistance and so on.
@@ -1123,7 +1125,7 @@
 		Suppose now we flip our fair coin 10 times: the coin can now land heads up $X=0, 1, 2, ..., 9, 10$ times. What is the probability of each outcome?
 		
 		\begin{equation}
-		Pr(X=x) = \textcolor{blue}{\binom{10}{x}} \textcolor{orange}{0.5^x} \textcolor{green}{(1 - 0.5)^{10-x}}
+		\mathbb{P}(X=x) = \textcolor{blue}{\binom{10}{x}} \textcolor{orange}{0.5^x} \textcolor{green}{(1 - 0.5)^{10-x}}
 		\end{equation}
 		
 		\begin{itemize}
@@ -1146,10 +1148,10 @@
 	\begin{frame}
 		\frametitle{A biased coin}
 		
-		Suppose instead of our fair coin, we have a coin with an arbitrary probability of heads: $Pr(H) = \theta\in [0, 1]$. Probability distribution becomes:
+		Suppose instead of our fair coin, we have a coin with an arbitrary probability of heads: $\mathbb{P}(H) = \theta\in [0, 1]$. Probability distribution becomes:
 		
 		\begin{equation}
-		Pr(X=x) = \binom{10}{x} \theta^x (1 - \theta)^{10 - x}
+		\mathbb{P}(X=x) = \binom{10}{x} \theta^x (1 - \theta)^{10 - x}
 		\end{equation}
 		
 		How does changing $\theta$ change how the probability distribution looks?
@@ -1175,14 +1177,14 @@
 		A \textit{cumulative distribution function} or \textit{c.d.f.} yields the probability that an outcome is less than or equal to a certain value:
 		
 		\begin{equation}
-		F_X(x) := Pr(X\leq x) = \sum_{x_i \leq x} Pr(X = x_i)
+		F_X(x) := \mathbb{P}(X\leq x) = \sum_{x_i \leq x} \mathbb{P}(X = x_i)
 		\end{equation}
 		
 		E.g.s.:
 		
 		\begin{itemize}
-			\item $F_X(0) = Pr(X=0)$
-			\item $F_X(1) = Pr(X=0) + Pr(X=0)$
+			\item $F_X(0) = \mathbb{P}(X=0)$
+			\item $F_X(1) = \mathbb{P}(X=0) + \mathbb{P}(X=1)$
 		\end{itemize}
 		
 	\end{frame}
@@ -1279,7 +1281,7 @@
 		A common way is via \textit{expectations} which provides an \textit{average} value of a given random variable. The \textit{expected} value of a discrete random variable is given by:
 		
 		\begin{equation}
-		\mathbb{E}(X) = \sum_{i} x \times Pr(X=x)
+		\mathbb{E}(X) = \sum_{i} x \times \mathbb{P}(X=x)
 		\end{equation}
 		
 		In words, it's a sort of weighted mean over the possible outcomes, where the weights are probabilities.
@@ -1304,8 +1306,8 @@
 		\frametitle{Expected value: one die}
 		
 		\begin{table}[]
-			\begin{tabular}{lll}
-				$x$ & $Pr(X=x)$ & $x \times Pr(X=x)$ \\
+			\begin{tabular}{ccc}
+				$x$ & $\mathbb{P}(X=x)$ & $x \times \mathbb{P}(X=x)$ \\
 				\midrule
 				1 & 1/6     & 1/6       \\
 				2 & 1/6     & 2/6       \\
@@ -1397,7 +1399,7 @@
 			\centerline{\includegraphics[width=0.4\textwidth]{./figures/horse_race_base.pdf}}
 		\end{figure}
 		
-		Note, this is a two dimensional probability distribution $Pr(X=x, Y=y)$. For example, $Pr(X=0, Y=1)=0.3$.
+		Note, this is a two dimensional probability distribution $\mathbb{P}(X=x, Y=y)$. For example, $\mathbb{P}(X=0, Y=1)=0.3$.
 		
 	\end{frame}
 	
@@ -1411,7 +1413,7 @@
 		All values of distribution are non-negative. Summing the values:
 		
 		\begin{equation}
-		\sum_{x_i} \sum_{y_i} Pr(X=x_i, Y=y_i) = 0.5 + 0.3 + 0.1 + 0.1 = 1
+		\sum_{x_i} \sum_{y_i} \mathbb{P}(X=x_i, Y=y_i) = 0.5 + 0.3 + 0.1 + 0.1 = 1
 		\end{equation}
 		
 	\end{frame}
@@ -1422,10 +1424,10 @@
 		Suppose we don't observe $Y$, so only want to know the probability distribution of $X$ \textit{irrespective} of $Y$. How do we obtain this?
 		
 		\begin{equation}
-		Pr(X=x_i) = \sum_{y_i} Pr(X=x_i, Y=y_i)
+		\mathbb{P}(X=x_i) = \sum_{y_i} \mathbb{P}(X=x_i, Y=y_i)
 		\end{equation}
 		
-		This summation is known as \textit{marginalising} the joint distribution; accordingly, $Pr(X=x_i)$ is the \textit{marginal} \textit{p.m.f.} of $X$. But what does this look like graphically? 
+		This summation is known as \textit{marginalising} the joint distribution; accordingly, $\mathbb{P}(X=x_i)$ is the \textit{marginal} \textit{p.m.f.} of $X$. But what does this look like graphically? 
 		
 	\end{frame}
 	
@@ -1444,7 +1446,7 @@
 			Much like for events, we can consider independent random variables. For a pair of bivariate discrete r.v.s this means:
 			
 			\begin{equation}
-			Pr(X=x_i, Y=y_i) = Pr(X=x_i) \times Pr(Y=y_i)
+			\mathbb{P}(X=x_i, Y=y_i) = \mathbb{P}(X=x_i) \times \mathbb{P}(Y=y_i)
 			\end{equation}
 			
 			Question: In our horse race example, are $X$ and $Y$ independent?
@@ -1465,7 +1467,7 @@
 			Taking a single value:
 			
 			\begin{equation}
-			Pr(X=0, Y=0) = 0.5 \neq 0.8 \times 0.6
+			\mathbb{P}(X=0, Y=0) = 0.5 \neq 0.8 \times 0.6
 			\end{equation}
 			
 		\end{frame}
@@ -1476,7 +1478,7 @@
 		Suppose we know that $X=1$, what then does the updated probability distribution look like for $Y$? Use law of conditional probabilities:
 		
 		\begin{equation}
-		Pr(Y=y_i|X=1) = \frac{Pr(Y=y_i,X=1)}{Pr(X=1)}
+		\mathbb{P}(Y=y_i|X=1) = \frac{\mathbb{P}(Y=y_i,X=1)}{\mathbb{P}(X=1)}
 		\end{equation}
 		
 		But what does this look like graphically?
@@ -1577,7 +1579,7 @@
 		To determine probabilities, we integrate the probability density:
 		
 		\begin{equation}
-		Pr(h_1 \leq H \leq h_2) = \int_{h_1}^{h_2} p(H) dH
+		\mathbb{P}(h_1 \leq H \leq h_2) = \int_{h_1}^{h_2} p(H) dH
 		\end{equation}
 		
 		What does this amount to?
@@ -1608,6 +1610,19 @@
 		\end{equation}
 		
 		The \textit{support} of a distribution is the region over which the random variable can possibly take those values. For heights, no one can have a negative height, so we set a lower bound of zero; there is no absolute upper cut-off, so we set an upper bound of infinity.
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Expectations}
+		
+		To determine the expected value of a continuous distribution, you just use integration where we've used summation for discrete distributions:
+		
+		\begin{equation}
+		\mathbb{E}(H) = \int_{0}^{\infty} H \times p(H) dH
+		\end{equation}
+		
+		The same is true for other operations like \textit{marginalisation}.
 		
 	\end{frame}
 	
@@ -1714,10 +1729,10 @@
 		
 		\vspace{0.5cm}
 		
-		probability of the set $\mathcal{C}$ defined by: $x_1 \leq x \leq x_2$ and $y_1 \leq y \leq y_2$: 
+		The probability of the set $\mathcal{C}$ defined by: $x_1 \leq x \leq x_2$ and $y_1 \leq y \leq y_2$ is given by: 
 		
 		\begin{equation}
-		 Pr(\mathcal{C}) = \int_{x_1}^{x_2}\int_{y_1}^{y_2} p(x, y)dx dy
+		 \mathbb{P}(\mathcal{C}) = \int_{x_1}^{x_2}\int_{y_1}^{y_2} p(x, y)dx dy
 		\end{equation}
 		
 	\end{frame}
@@ -1732,6 +1747,32 @@
 	\end{frame}
 	
 	\begin{frame}
+		\frametitle{Conditional distributions redux}
+		
+		Like for discrete \textit{r.v.s.}, we can characterise a conditional distribution if we observe $x=x_1$:
+		
+		\begin{equation}
+		p(y|x_1) = \frac{p(x, y)}{p(x_1)}
+		\end{equation}
+		
+		But what does this distribution look like?
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Conditional distribution: visualised}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.9\textwidth]{./figures/multivariate_continuous_conditional.pdf}}
+		\end{figure}
+			
+	\end{frame}
+	
+	\begin{frame}
+		\Large Questions?
+	\end{frame}
+	
+	\begin{frame}
 		
 		\frametitle{Problems: continuous distributions}
 		
@@ -1740,11 +1781,6 @@
 			\item Show that a normal distribution with $\mu=0$ has a mean of zero.
 		\end{enumerate}
 
-	\end{frame}
-	
-	
-	\begin{frame}
-		\Large Questions?
 	\end{frame}
 	
 \end{document} 
