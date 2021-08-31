@@ -424,7 +424,7 @@
 			\centerline{\includegraphics[width=0.2\textwidth]{./figures/dice.png}}
 		\end{figure}
 	
-	Consider a six-sided die with numbers 1-6 on each face that is thrown once.
+	Consider a fair six-sided die with numbers 1-6 on each face that is thrown once.
 		
 		\begin{enumerate}
 			\item What's the probability that a six is thrown?
@@ -1262,9 +1262,93 @@
 	
 	\section{Expectations}
 	\frame{\tableofcontents[currentsection]}
+	
+	\begin{frame}
+		\frametitle{How to summarise a distribution?}
+		
+		A probability distribution, such as a binomial, is quite a complex thing: it tells us what the probability is for any particular event.
+		
+		\vspace{0.5cm}
+		
+		We often want to summarise a distribution: giving one number which is indicative of it.
+		
+		\vspace{0.5cm}
+		
+		A common way is via \textit{expectations} which provides an \textit{average} value of a given random variable. The \textit{expected} value of a discrete random variable is given by:
+		
+		\begin{equation}
+		\mathbb{E}(X) = \sum_{i} x \times Pr(X=x)
+		\end{equation}
+		
+		In words, it's a sort of weighted mean over the possible outcomes, where the weights are probabilities.
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Expected value: one die}
+		
+		\begin{figure}[ht]
+			\centerline{\includegraphics[width=0.3\textwidth]{./figures/dice.png}}
+		\end{figure}
+		
+		Consider a fair six-sided die with numbers 1-6 on each face that is thrown once.
+		
+		
+		Question: What is the expected value?
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Expected value: one die}
+		
+		\begin{table}[]
+			\begin{tabular}{lll}
+				$x$ & $Pr(X=x)$ & $x \times Pr(X=x)$ \\
+				\midrule
+				1 & 1/6     & 1/6       \\
+				2 & 1/6     & 2/6       \\
+				3 & 1/6     & 3/6       \\
+				4 & 1/6     & 4/6       \\
+				5 & 1/6     & 5/6       \\
+				6 & 1/6     & 6/6       \\
+				\midrule
+				&         & 21/6
+			\end{tabular}
+		\end{table}
+				
+		The expected value / mean is 3.5. But what does that mean?
+				
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Expectations represent long-run sample means}
+		
+		We can think of expectations as representing a sample mean if we threw the die a large (technically infinite) number of times.
+		
+			\begin{figure}[t]
+				\centerline{\animategraphics[width=0.8\textwidth,controls,buttonsize=1em,buttonfg=0.5]{8}{./figures/animations/dice_throwing_}{1}{100}}
+			\end{figure}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\Large Questions?
+	\end{frame}
 
 	\section{Joint distributions}
 	\frame{\tableofcontents[currentsection]}
+	
+	\begin{frame}
+		\frametitle{Why we need more random variables?}
+		
+		In science, there are usually a range of interacting factors which need to be accounted for:
+		
+		\begin{itemize}
+			\item Medicine: treatment success may depend on blood pressure, sex, comorbidities
+			\item Epidemiology: outcome of a cluster randomised trial depends on attributes of the clusters, environmental variables such as the weather
+		\end{itemize}
+		
+	\end{frame}
 	
 	\section{Continuous probability distributions}
 	\frame{\tableofcontents[currentsection]}
