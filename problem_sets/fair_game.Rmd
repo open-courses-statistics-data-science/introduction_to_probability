@@ -1,6 +1,8 @@
 ---
 title: "Fair game problems and answers"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 Consider a fair game which costs $Y$ to play: a fair coin is flipped twice, and the number of heads $X$ recorded. The game pays the player $X$.
@@ -18,13 +20,13 @@ The expected value of the game is the long-term mean, so a fair price is $1$.
 We create a random variable $Z_t$ to indicate the profit after $t$ plays:
 
 \begin{equation}
-Z_t = \sum_{\tau=1}{t} (X_t - 1) = \sum_{\tau=1}{t} X_t - t
+Z_t = \sum_{\tau=1}^{t} (X_t - 1) = \sum_{\tau=1}^{t} X_t - t
 \end{equation}
 
 where $X_t$ is a two-flip binomial with probability 1/2. Since the individual random variables all have the same probability, their sum is also a binomial (you can prove this via moment generating functions: see chapter in Blitzstein and Hwang book):
 
 \begin{equation}
-\zeta_t := \sum_{\tau=1}{t} X_t
+\zeta_t := \sum_{\tau=1}^{t} X_t
 \end{equation}
 
 follows: $\zeta_t \sim \mathcal{B}(2t, 0.5)$.
